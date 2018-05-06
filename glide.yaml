@@ -1,0 +1,9 @@
+package: github.com/kahootali/Kubernetes-Controller
+import:
+- package: k8s.io/api
+  version: kubernetes-1.8.0
+- package: k8s.io/apimachinery
+  version: kubernetes-1.8.0
+- package: k8s.io/client-go
+  version: 5.0.0
+- package: gopkg.in/yaml.v2
