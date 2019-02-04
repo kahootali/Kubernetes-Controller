@@ -27,6 +27,14 @@ func main() {
 	for _, node := range nodes.Items {
 		fmt.Println(node.Name)
 	}
+	namespaces, err := clientset.CoreV1().Namespaces().List(meta_v1.ListOptions{})
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("Namespaces in Cluster :  ")
+	for _, ns := range namespaces.Items {
+		fmt.Println(ns.Name)
+	}
 	pods, err := clientset.Core().Pods("").List(meta_v1.ListOptions{})
 	if err != nil {
 		log.Fatal(err)
