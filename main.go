@@ -19,7 +19,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	nodes, err := clientset.Core().Nodes().List(meta_v1.ListOptions{})
+	nodes, err := clientset.CoreV1().Nodes().List(meta_v1.ListOptions{})
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -35,7 +35,7 @@ func main() {
 	for _, ns := range namespaces.Items {
 		fmt.Println(ns.Name)
 	}
-	pods, err := clientset.Core().Pods("").List(meta_v1.ListOptions{})
+	pods, err := clientset.CoreV1().Pods("").List(meta_v1.ListOptions{})
 	if err != nil {
 		log.Fatal(err)
 	}
